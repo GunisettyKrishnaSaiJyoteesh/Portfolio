@@ -6,7 +6,7 @@ import { OrbitControls, Sphere } from "@react-three/drei";
 import * as THREE from "three";
 
 function Particles({ count = 100, darkMode }) {
-  const groupRef = useRef();
+  const groupRef = useRef<THREE.Group>(null);
   const particles = useMemo(() => {
     const temp = [];
     for (let i = 0; i < count; i++) {
@@ -44,7 +44,7 @@ function Particles({ count = 100, darkMode }) {
 }
 
 function AnimatedGradient({ darkMode }) {
-  const meshRef = useRef();
+  const meshRef = useRef<THREE.Mesh>(null);
   
   useFrame(({ clock }) => {
     if (meshRef.current) {
