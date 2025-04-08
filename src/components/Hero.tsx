@@ -16,14 +16,14 @@ const Hero = () => {
         <div className="glass-panel p-8 md:p-12 max-w-2xl animate-fade-in opacity-0" style={{ animationDelay: "0.2s" }}>
           <h2 className="text-brand-500 font-medium mb-2 animate-fade-in opacity-0" style={{ animationDelay: "0.4s" }}>Hello, my name is</h2>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-950 dark:text-white mb-4 animate-fade-in opacity-0" style={{ animationDelay: "0.6s" }}>
-            John Doe
+            G.K.S Jyoteesh
           </h1>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-800/70 dark:text-brand-300/70 mb-6 animate-fade-in opacity-0" style={{ animationDelay: "0.8s" }}>
-            I build things for the web.
+            I am an aspiring Data Scientist.
           </h3>
           <p className="text-lg md:text-xl text-brand-800/60 dark:text-brand-300/60 max-w-xl mb-8 animate-fade-in opacity-0" style={{ animationDelay: "1s" }}>
-            I'm a software developer specializing in building exceptional digital experiences.
-            Currently focused on creating accessible, human-centered products.
+            I'm a data analyst expertising on real-time data.
+            Currently focused on big data.
           </p>
           
           <div className="flex flex-wrap gap-4 animate-fade-in opacity-0" style={{ animationDelay: "1.2s" }}>
