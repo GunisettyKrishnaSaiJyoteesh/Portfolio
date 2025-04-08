@@ -2,7 +2,7 @@
 import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useTheme } from "./ThemeProvider";
-import { OrbitControls, Sphere } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 function Particles({ count = 100, darkMode }) {
@@ -16,8 +16,7 @@ function Particles({ count = 100, darkMode }) {
           Math.random() * 20 - 10,
           Math.random() * 20 - 10
         ],
-        scale: Math.random() * 0.5 + 0.1,
-        speed: Math.random() * 0.05 + 0.02
+        scale: Math.random() * 0.5 + 0.1
       });
     }
     return temp;
@@ -35,9 +34,10 @@ function Particles({ count = 100, darkMode }) {
   return (
     <group ref={groupRef}>
       {particles.map((particle, i) => (
-        <Sphere key={i} position={particle.position} args={[particle.scale, 8, 8]}>
+        <mesh key={i} position={particle.position}>
+          <sphereGeometry args={[particle.scale, 8, 8]} />
           <meshBasicMaterial color={dotColor} transparent opacity={0.7} />
-        </Sphere>
+        </mesh>
       ))}
     </group>
   );
@@ -95,7 +95,7 @@ export default function ThreeBackground({ className = "" }) {
       <Canvas camera={{ position: [0, 0, 15], fov: 65 }}>
         <ambientLight intensity={0.5} />
         <AnimatedGradient darkMode={darkMode} />
-        <Particles darkMode={darkMode} />
+        <Particles darkMode={darkMode} count={50} />
         <OrbitControls 
           enableZoom={false} 
           enablePan={false} 
