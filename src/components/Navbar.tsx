@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,9 +57,12 @@ const Navbar = () => {
             </a>
           ))}
           <ThemeToggle />
-          <Button className="bg-brand-500 hover:bg-brand-600 text-white glow">
-            Resume
-          </Button>
+          <Link to="/resume">
+            <Button className="bg-brand-500 hover:bg-brand-600 text-white glow">
+              <FileText className="mr-2 h-4 w-4" />
+              Resume
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -87,9 +91,12 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="bg-brand-500 hover:bg-brand-600 text-white glow">
-              Resume
-            </Button>
+            <Link to="/resume" onClick={() => setIsOpen(false)}>
+              <Button className="bg-brand-500 hover:bg-brand-600 text-white glow">
+                <FileText className="mr-2 h-4 w-4" />
+                Resume
+              </Button>
+            </Link>
           </div>
         </div>
       )}

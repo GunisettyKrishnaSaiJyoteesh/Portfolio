@@ -1,8 +1,9 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, FileText } from "lucide-react";
 import ThreeBackground from "./ThreeBackground";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -27,9 +28,12 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-wrap gap-4 animate-fade-in opacity-0" style={{ animationDelay: "1.2s" }}>
-            <Button className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-6 glow">
-              View My Work
-            </Button>
+            <Link to="/resume">
+              <Button className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-6 glow">
+                <FileText className="mr-2 h-4 w-4" />
+                View My Work
+              </Button>
+            </Link>
             <Button variant="outline" className="border-brand-500 text-brand-600 dark:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-900/30 px-6 py-6">
               Contact Me
             </Button>
