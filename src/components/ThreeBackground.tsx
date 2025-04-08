@@ -1,17 +1,16 @@
 
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useTheme } from "./ThemeProvider";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import * as THREE from "three";
 
 function Particles({ count = 100, darkMode }) {
-  const mesh = useRef();
-  const particles = useRef([]);
-  
-  if (!particles.current.length) {
+  const groupRef = useRef();
+  const particles = useMemo(() => {
+    const temp = [];
     for (let i = 0; i < count; i++) {
-      particles.current.push({
+      temp.push({
         position: [
           Math.random() * 20 - 10,
           Math.random() * 20 - 10,
@@ -21,20 +20,21 @@ function Particles({ count = 100, darkMode }) {
         speed: Math.random() * 0.05 + 0.02
       });
     }
-  }
+    return temp;
+  }, [count]);
   
   useFrame(() => {
-    if (mesh.current) {
-      mesh.current.rotation.x += 0.001;
-      mesh.current.rotation.y += 0.001;
+    if (groupRef.current) {
+      groupRef.current.rotation.x += 0.001;
+      groupRef.current.rotation.y += 0.001;
     }
   });
   
   const dotColor = darkMode ? "#38bdf8" : "#0ea5e9";
   
   return (
-    <group ref={mesh}>
-      {particles.current.map((particle, i) => (
+    <group ref={groupRef}>
+      {particles.map((particle, i) => (
         <Sphere key={i} position={particle.position} args={[particle.scale, 8, 8]}>
           <meshBasicMaterial color={dotColor} transparent opacity={0.7} />
         </Sphere>
@@ -44,26 +44,44 @@ function Particles({ count = 100, darkMode }) {
 }
 
 function AnimatedGradient({ darkMode }) {
-  const mesh = useRef();
+  const meshRef = useRef();
   
   useFrame(({ clock }) => {
-    if (mesh.current) {
-      mesh.current.rotation.z = clock.getElapsedTime() * 0.1;
+    if (meshRef.current) {
+      meshRef.current.rotation.z = clock.getElapsedTime() * 0.1;
     }
   });
   
+  // Create a custom gradient texture
+  const gradientTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const context = canvas.getContext('2d');
+    
+    const gradient = context.createLinearGradient(0, 0, 0, 256);
+    
+    if (darkMode) {
+      gradient.addColorStop(0, "#0f172a");
+      gradient.addColorStop(0.5, "#075985");
+      gradient.addColorStop(1, "#0c4a6e");
+    } else {
+      gradient.addColorStop(0, "#f0f9ff");
+      gradient.addColorStop(0.5, "#e0f2fe");
+      gradient.addColorStop(1, "#7dd3fc");
+    }
+    
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, 256, 256);
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    return texture;
+  }, [darkMode]);
+  
   return (
-    <mesh ref={mesh} position={[0, 0, -5]} scale={[20, 20, 1]}>
+    <mesh ref={meshRef} position={[0, 0, -5]} scale={[20, 20, 1]}>
       <planeGeometry args={[1, 1]} />
-      <meshBasicMaterial>
-        <gradientTexture
-          attach="map"
-          stops={[0, 0.5, 1]}
-          colors={darkMode 
-            ? [new THREE.Color("#0f172a"), new THREE.Color("#075985"), new THREE.Color("#0c4a6e")] 
-            : [new THREE.Color("#f0f9ff"), new THREE.Color("#e0f2fe"), new THREE.Color("#7dd3fc")]}
-        />
-      </meshBasicMaterial>
+      <meshBasicMaterial map={gradientTexture} />
     </mesh>
   );
 }
