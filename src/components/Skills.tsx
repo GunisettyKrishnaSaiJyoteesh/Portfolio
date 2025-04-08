@@ -64,16 +64,16 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-white section-padding">
+    <section id="skills" className="bg-white dark:bg-brand-950 section-padding transition-colors duration-300">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="section-title">My Skills</h2>
+        <h2 className="section-title text-brand-950 dark:text-white">My Skills</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {skillCategories.map((category, index) => (
-            <div key={index}>
+            <div key={index} className="glass-panel p-6 animate-fade-in opacity-0" style={{ animationDelay: `${0.1 * index}s` }}>
               <div className="flex items-center gap-2 mb-6">
                 {category.icon}
-                <h3 className="text-xl font-semibold text-brand-900">
+                <h3 className="text-xl font-semibold text-brand-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
@@ -82,14 +82,17 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
                     <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium text-brand-800">
+                      <span className="text-sm font-medium text-brand-800 dark:text-brand-300">
                         {skill.name}
                       </span>
-                      <span className="text-xs font-medium text-brand-600">
+                      <span className="text-xs font-medium text-brand-600 dark:text-brand-400">
                         {skill.proficiency}%
                       </span>
                     </div>
-                    <Progress value={skill.proficiency} className="h-2 bg-brand-100" indicatorClassName="bg-gradient-to-r from-brand-400 to-brand-600" />
+                    <Progress 
+                      value={skill.proficiency} 
+                      className="h-2 bg-brand-100 dark:bg-brand-800/40"
+                    />
                   </div>
                 ))}
               </div>
