@@ -57,12 +57,12 @@ const Navbar = () => {
             </a>
           ))}
           <ThemeToggle />
-          <Link to="/resume">
+          <a href="/resume">
             <Button className="bg-brand-500 hover:bg-brand-600 text-white glow">
               <FileText className="mr-2 h-4 w-4" />
               Resume
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}

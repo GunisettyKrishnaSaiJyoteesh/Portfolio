@@ -29,20 +29,20 @@ const Resume = () => {
             <CardHeader>
               <CardTitle className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold">Master of Data Science</h3>
-                  <p className="text-brand-600 dark:text-brand-400 text-sm mt-1">University Name</p>
+                  <h3 className="text-xl font-bold">Bachelors of Technology</h3>
+                  <p className="text-brand-600 dark:text-brand-400 text-sm mt-1">ANIL NEERUKONDA INSTITUTE OF TECHNOLOGY AND SCIENCES</p>
                 </div>
-                <span className="text-sm text-brand-500">2020 - 2022</span>
+                <span className="text-sm text-brand-500">2022 - 2026</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Relevant coursework: Data Analysis, Machine Learning, Statistical Computing, Big Data Systems, Data Visualization
+                Relevant coursework: Data Analysis, Machine Learning, Statistical Computing, Data Visualization, Artificial Intelligence, Database Management
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-brand-500">
+          {/* <Card className="border-l-4 border-l-brand-500">
             <CardHeader>
               <CardTitle className="flex justify-between items-start">
                 <div>
@@ -57,7 +57,7 @@ const Resume = () => {
                 Relevant coursework: Programming Fundamentals, Data Structures & Algorithms, Database Systems, Software Engineering
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
         </section>
 
         {/* Experience Section */}
@@ -71,23 +71,23 @@ const Resume = () => {
             <CardHeader>
               <CardTitle className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-xl font-bold">Data Analyst</h3>
-                  <p className="text-brand-600 dark:text-brand-400 text-sm mt-1">Company Name</p>
+                  <h3 className="text-xl font-bold">Robotic Process Automation Intern</h3>
+                  <p className="text-brand-600 dark:text-brand-400 text-sm mt-1">Edumoon</p>
                 </div>
-                <span className="text-sm text-brand-500">2022 - Present</span>
+                <span className="text-sm text-brand-500">May 2024 - July 2024</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                <li>Analyzed large datasets to identify trends and patterns</li>
-                <li>Built interactive dashboards for real-time data monitoring</li>
+                <li>Analyzed large websites to identify trends and patterns</li>
+                <li>Built interactive forms for real-time data monitoring</li>
                 <li>Collaborated with cross-functional teams to develop data-driven solutions</li>
-                <li>Implemented machine learning models for predictive analytics</li>
+                <li>Implemented automation tools to streamline processes</li>
               </ul>
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-brand-500">
+          {/* <Card className="border-l-4 border-l-brand-500">
             <CardHeader>
               <CardTitle className="flex justify-between items-start">
                 <div>
@@ -105,7 +105,7 @@ const Resume = () => {
                 <li>Conducted exploratory data analysis to identify insights</li>
               </ul>
             </CardContent>
-          </Card>
+          </Card> */}
         </section>
 
         {/* Skills Section */}
@@ -123,11 +123,13 @@ const Resume = () => {
               <CardContent>
                 <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                   <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                  <li>Java</li>
                   <li>R (dplyr, ggplot2)</li>
                   <li>SQL & Database Management</li>
-                  <li>Big Data Technologies (Hadoop, Spark)</li>
+                  {/* <li>Big Data Technologies (Hadoop, Spark)</li> */}
                   <li>Data Visualization (Tableau, Power BI)</li>
                   <li>Version Control (Git)</li>
+                  
                 </ul>
               </CardContent>
             </Card>
@@ -140,7 +142,7 @@ const Resume = () => {
                 <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                   <li>Problem Solving</li>
                   <li>Critical Thinking</li>
-                  <li>Team Collaboration</li>
+                  <li>Leadership</li>
                   <li>Communication</li>
                   <li>Project Management</li>
                   <li>Time Management</li>
@@ -161,43 +163,43 @@ const Resume = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex justify-between items-center">
-                  <span>Data Science Professional</span>
-                  <span className="text-sm text-brand-500">2023</span>
+                  <span>Programming in Java- NPTEL</span>
+                  <span className="text-sm text-brand-500">2024</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">IBM</p>
+                <p className="text-sm text-muted-foreground">NPTEL</p>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
                 <CardTitle className="flex justify-between items-center">
-                  <span>Machine Learning Specialization</span>
-                  <span className="text-sm text-brand-500">2022</span>
+                  <span>Advanced R Programming</span>
+                  <span className="text-sm text-brand-500">2024</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">Stanford Online / Coursera</p>
+                <p className="text-sm text-muted-foreground">NPTEL</p>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
                 <CardTitle className="flex justify-between items-center">
-                  <span>Big Data Analytics</span>
-                  <span className="text-sm text-brand-500">2021</span>
+                  <span>Computer Vision and Image Processing</span>
+                  <span className="text-sm text-brand-500">2025</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">Microsoft</p>
+                <p className="text-sm text-muted-foreground">NPTEL</p>
               </CardContent>
             </Card>
             
             <Card>
               <CardHeader>
                 <CardTitle className="flex justify-between items-center">
-                  <span>SQL Advanced Certification</span>
+                  <span></span>
                   <span className="text-sm text-brand-500">2020</span>
                 </CardTitle>
               </CardHeader>

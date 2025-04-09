@@ -5,24 +5,15 @@ import { Layers, Code, Server, Database, PaintBucket, LineChart } from "lucide-r
 
 const Skills = () => {
   const skillCategories = [
+    
     {
-      title: "Frontend Development",
-      icon: <Code className="h-6 w-6 text-brand-500" />,
-      skills: [
-        { name: "HTML/CSS", proficiency: 90 },
-        { name: "JavaScript", proficiency: 85 },
-        { name: "React", proficiency: 80 },
-        { name: "TypeScript", proficiency: 75 },
-      ],
-    },
-    {
-      title: "Backend Development",
+      title: "Data Analysis",
       icon: <Server className="h-6 w-6 text-brand-500" />,
       skills: [
-        { name: "Node.js", proficiency: 75 },
-        { name: "Express", proficiency: 70 },
-        { name: "Python", proficiency: 65 },
-        { name: "RESTful APIs", proficiency: 80 },
+        { name: "Python", proficiency: 80 },
+        { name: "R", proficiency: 70 },
+        { name: "Excel", proficiency: 85 },
+      
       ],
     },
     {
@@ -30,37 +21,37 @@ const Skills = () => {
       icon: <Database className="h-6 w-6 text-brand-500" />,
       skills: [
         { name: "MongoDB", proficiency: 75 },
-        { name: "SQL", proficiency: 70 },
-        { name: "Firebase", proficiency: 80 },
-      ],
-    },
-    {
-      title: "Design & UI/UX",
-      icon: <PaintBucket className="h-6 w-6 text-brand-500" />,
-      skills: [
-        { name: "Responsive Design", proficiency: 85 },
-        { name: "Tailwind CSS", proficiency: 80 },
-        { name: "Figma", proficiency: 75 },
-      ],
-    },
-    {
-      title: "Other Skills",
-      icon: <Layers className="h-6 w-6 text-brand-500" />,
-      skills: [
-        { name: "Git & GitHub", proficiency: 85 },
-        { name: "Agile/Scrum", proficiency: 75 },
-        { name: "Testing", proficiency: 70 },
+        { name: "SQL", proficiency: 80 },
       ],
     },
     {
       title: "Data Visualization",
       icon: <LineChart className="h-6 w-6 text-brand-500" />,
       skills: [
-        { name: "D3.js", proficiency: 65 },
-        { name: "Chart.js", proficiency: 75 },
-        { name: "Recharts", proficiency: 80 },
+        { name: "PowerBI", proficiency: 90 },
+        { name: "OriginPro", proficiency: 75 },
+        { name: "Excel", proficiency: 70 },
       ],
     },
+    {
+      title: "Frontend Development",
+      icon: <Code className="h-6 w-6 text-brand-500" />,
+      skills: [
+        { name: "HTML/CSS", proficiency: 90 },
+        { name: "JavaScript", proficiency: 60 },
+      ],
+    },
+    {
+      title: "Other Skills",
+      icon: <Layers className="h-6 w-6 text-brand-500" />,
+      skills: [
+        { name: "Robotic Process Automation", proficiency: 90 },
+        { name: "Git & GitHub", proficiency: 85 },
+        { name: "Canva", proficiency: 90 },
+        
+      ],
+    },
+    
   ];
 
   return (

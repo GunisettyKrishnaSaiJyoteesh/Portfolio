@@ -1,22 +1,38 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    // Reset form
-    (e.target as HTMLFormElement).reset();
+
+    emailjs
+      .sendForm(
+        "service_xomhr5e",    // 🔁 Replace with your EmailJS service ID
+        "template_h3su094",   // 🔁 Replace with your EmailJS template ID
+        e.currentTarget,
+        "GJDsTOf7cWLfCiZT4"     // 🔁 Replace with your EmailJS public key
+      )
+      .then(() => {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        e.currentTarget.reset();
+      })
+      .catch((error) => {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again later.",
+        });
+        console.error("EmailJS error:", error);
+      });
   };
 
   return (
@@ -37,8 +53,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-brand-700">Email</p>
-                  <a href="mailto:john@example.com" className="text-brand-900 font-medium">
-                    john@example.com
+                  <a href="mailto:gunisettykrishnasaijyoteesh@gmail.com" className="text-brand-900 font-medium">
+                    gunisettykrishnasaijyoteesh@gmail.com
                   </a>
                 </div>
               </div>
@@ -49,8 +65,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-brand-700">Phone</p>
-                  <a href="tel:+1234567890" className="text-brand-900 font-medium">
-                    +1 (234) 567-890
+                  <a href="tel:+91 7013393489" className="text-brand-900 font-medium">
+                    +91 7013393489
                   </a>
                 </div>
               </div>
@@ -61,7 +77,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-brand-700">Location</p>
-                  <p className="text-brand-900 font-medium">San Francisco, CA</p>
+                  <p className="text-brand-900 font-medium">Visakhapatnam, India</p>
                 </div>
               </div>
             </div>
@@ -76,6 +92,7 @@ const Contact = () => {
                   </label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Your name"
                     required
@@ -88,6 +105,7 @@ const Contact = () => {
                   </label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="Your email"
                     required
@@ -102,6 +120,7 @@ const Contact = () => {
                 </label>
                 <Input
                   id="subject"
+                  name="subject"
                   type="text"
                   placeholder="Subject"
                   required
@@ -115,6 +134,7 @@ const Contact = () => {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder="Your message"
                   required
                   className="mt-1 min-h-[150px]"

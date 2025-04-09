@@ -92,11 +92,11 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
+        {/* <div className="flex justify-center mt-12">
           <Button className="bg-brand-500 hover:bg-brand-600 text-white glow animate-fade-in opacity-0" style={{ animationDelay: "1s" }}>
             View All Projects
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

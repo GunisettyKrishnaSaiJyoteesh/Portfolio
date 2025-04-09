@@ -25,14 +25,14 @@ const Footer = () => {
 
           <div className="flex gap-4 mb-6 md:mb-0 animate-fade-in opacity-0" style={{ animationDelay: "0.4s" }}>
             <a
-              href="#"
+              href="https://github.com/GunisettyKrishnaSaiJyoteesh"
               className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors hover:scale-110"
               aria-label="GitHub"
             >
               <Github size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/gunisetty-krishna-sai-jyoteesh/"
               className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors hover:scale-110"
               aria-label="LinkedIn"
             >
@@ -66,7 +66,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center animate-fade-in opacity-0" style={{ animationDelay: "0.8s" }}>
           <p className="text-sm text-brand-400">
-            © {new Date().getFullYear()} John Doe. All rights reserved.
+            © {new Date().getFullYear()} Gunisetty Krishna Sai Jyoteesh. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#" className="text-sm text-brand-400 hover:text-white transition-colors">
